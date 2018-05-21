@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block contend %}
+    <h1>文章列表:</h1>
+    {% for title in titles_keys %}
+        <div>
+            <a href="{{ url_for('file', filename = title ) }}">{{ titles[title] }}</a>
+        </div>
+    {% endfor %}
+{% endblock %}
