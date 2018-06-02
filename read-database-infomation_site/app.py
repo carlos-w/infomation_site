@@ -9,9 +9,9 @@ from datetime import datetime
 app = Flask(__name__)
 # 数据库的连接配置信息
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/infomation'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_COMMIT_TEARDOWN'] = True
 db = SQLAlchemy(app)
-SQLALCHEMY_TRACK_MODIFICATIONS = True
-SQLALCHEMY_COMMIT_TEARDOWN = True
 
 # 创建一个内容表
 
@@ -25,8 +25,8 @@ class File(db.Model):
     def __init__(self,title,category_id,content,created_time=None):
         self.title = title
         if created_time is None:
-            create_time = datetime.utcnow()
-        self.create_time = create_time
+            created_time = datetime.utcnow()
+        self.created_time = created_time
         self.category_id = category_id
         self.content = content
 

@@ -4,9 +4,14 @@
 
 from  app import db, File, Category
 
-#file1 = File('¼ÆËã»úÓïÑÔ¼ò½é','¼ÆËã»úÓïÑÔ','¼ÆËã»úÓïÑÔÓĞºÜ¶àÖÖ£¬ÆäÖĞ³£¼ûµÄÓĞ:Python,Java,Go,Shell...')
-file2 = File('ÖĞ¹úÀúÊ·','ÀúÊ·','ÖĞ»ªÎÄ»¯²©´ó¾­Éî')
+cate1 = Category('è®¡ç®—æœºè¯­è¨€2')
+cate2 = Category('å†å²2')
 
-#db.session.add(file1)
+db.session.add(cate1)
+db.session.add(cate2)
+db.session.commit()
+file1 = File('è®¡ç®—æœºè¯­è¨€ç®€ä»‹2',cate1,'è®¡ç®—æœºè¯­è¨€æœ‰å¾ˆå¤šç§ï¼Œå…¶ä¸­å¸¸è§çš„æœ‰:Python,Java,Go,Shell...')
+file2 = File('ä¸­å›½å†å²2',cate2,'ä¸­åæ–‡åŒ–åšå¤§ç»æ·±')
+db.session.add(file1)
 db.session.add(file2)
 db.session.commit()
