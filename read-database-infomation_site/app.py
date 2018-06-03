@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# coding=utf-8
 # 
 
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-# ´´½¨Ò»¸öflaskÊµÀý
+# åˆ›å»ºä¸€ä¸ªflaskå®žä¾‹
 app = Flask(__name__)
-# Êý¾Ý¿âµÄÁ¬½ÓÅäÖÃÐÅÏ¢
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/infomation'
+# æ•°æ®åº“çš„è¿žæŽ¥é…ç½®ä¿¡æ¯
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/infomation?charset=utf8'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SQLALCHEMY_COMMIT_TEARDOWN'] = True
-db = SQLAlchemy(app)
+db = SQLAlchemy(app,use_native_unicode="utf8")
 
-# ´´½¨Ò»¸öÄÚÈÝ±í
+# åˆ›å»ºä¸€ä¸ªå†…å®¹è¡¨
 
 class File(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -29,10 +29,13 @@ class File(db.Model):
         self.created_time = created_time
         self.category_id = category_id
         self.content = content
+        __table_args__ = {
+                "mysql_charset" : "utf8"
+        }
 
     def __repr__(self):
         return '<File %r>' % self.title
-# ´´½¨Ò»¸öÀà±ð±í
+# åˆ›å»ºä¸€ä¸ªç±»åˆ«è¡¨
 
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -40,9 +43,18 @@ class Category(db.Model):
 
     def __init__(self, name):
         self.name = name
+        __table_args__ = {
+                "mysql_charset" : "utf8"
+        }
 
     def __repr__(self):
         return '<Category %r>' % self.name
 
 
+# ç½‘ç«™è·¯ç”±
 
+@app.route('/')
+def index():
+    return render_template('index.html',files=File.query.all())
+
+print(File.query.all())
