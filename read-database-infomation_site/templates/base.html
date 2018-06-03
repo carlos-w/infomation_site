@@ -1,0 +1,15 @@
+<body>
+   <div>
+       {% block header %}
+           <meta chatset="utf8">
+           <title>OKAY学习</title>
+           <link rel="stylesheet" href="style.css">
+       {% endblock %}
+   </div>
+   <div>{% block content %}{% endblock %}</div>
+   <div id="footer">
+       {% block footer %}
+       &copy; Copyright 2018 by <a href="http://127.0.0.1:3000/">学习网站</a>
+       {% endblock %}
+   </div>
+</body>
