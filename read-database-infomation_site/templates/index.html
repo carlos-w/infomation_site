@@ -5,7 +5,12 @@
 <h1>文章列表:</h1>
   <ul>
     {% for file in files %}
-    <li><a href={{ url_for ('file', file_id=file.id ) }}>{{ file.title }}</a></li>
+    <li><a href={{ url_for ('file', file_id=file.id ) }}>{{ file.title }} </a>
+	标签：
+	{% for tag in file.tags %}
+	<span> {{ tag }} </span>
+	{% endfor %}
+    </li>
     {% endfor %}
   </ul>
 {% endblock %}

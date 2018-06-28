@@ -1,0 +1,24 @@
+ * Serving Flask app "app.py" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:3000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 635-272-441
+127.0.0.1 - - [22/Jun/2018 16:55:42] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 16:57:29] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 16:57:30] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [22/Jun/2018 16:57:32] "GET /files/helloworld HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 16:58:07] "GET /files/helloworld HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 16:58:07] "GET /favicon.ico HTTP/1.0" 404 -
+127.0.0.1 - - [22/Jun/2018 16:58:09] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 16:58:11] "GET /files/helloshiyanlou HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 16:58:14] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 16:58:15] "GET /files/helloworld HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 16:58:17] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 16:58:18] "GET /files/helloshiyanlou HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 16:58:20] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 17:08:23] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [22/Jun/2018 17:46:06] "GET / HTTP/1.0" 200 -
